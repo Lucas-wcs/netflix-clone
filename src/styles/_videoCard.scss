@@ -1,0 +1,45 @@
+.video-card {
+
+    width: 25vw;
+    aspect-ratio: 16/9;
+    overflow: visible;
+    padding: 10px;
+
+
+    div {
+        width: 25vw;
+        height: 100%;
+        overflow: hidden;
+        transition: 0.3s;
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    div:hover {
+        scale: 1.1;
+    }
+
+    .skeleton {
+        width: 25vw;
+        height: 100%;
+        border-radius: 10px;
+        background: #333;
+        background: linear-gradient(110deg, #333 8%, #444 18%, #333 33%);
+        background-size: 200% 100%;
+        animation: 0.7s shine linear infinite;
+
+        &:hover {
+            scale: none;
+        }
+    }
+}
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+}
