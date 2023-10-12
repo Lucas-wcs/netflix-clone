@@ -1,12 +1,10 @@
 import React, {Suspense} from 'react';
-import {Await, defer, useLoaderData, useParams} from "react-router-dom";
-import loadVideos from "../actions/actions.js";
-import VideoCard from "./VideoCard.jsx";
+import {Await, defer, useLoaderData} from "react-router-dom";
+import { loadVideoById } from "../actions/actions.js";
 import FilmCardModal from "./FilmCardModal.jsx";
 
 const VideoModal = () => {
 
-    const param = useParams()
     const dataInLoading = useLoaderData()
 
 
@@ -15,9 +13,8 @@ const VideoModal = () => {
             <Suspense fallback={<><p>Loading...</p></>}>
                 <Await resolve={dataInLoading.video}>
                     {
-                        (films) => {
-                            const video = films.find((film) => {return film.id == param.id})
-                            return <FilmCardModal video={video.video} title={video.title}/>
+                        (film) => {
+                            return <FilmCardModal video={film.video} title={film.title}/>
                         }
                     }
                 </Await>
@@ -26,9 +23,9 @@ const VideoModal = () => {
     );
 };
 
-export const loadDatas = async () => {
+export const loadDataById = async ({params}) => {
     //récupération des données
-    const videoPromise = loadVideos()
+    const videoPromise = loadVideoById(params.id)
 
     return defer( {video : videoPromise} )
 }

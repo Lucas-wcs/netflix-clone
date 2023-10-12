@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import AppImage from "./AppImage.jsx";
 
-const VideoCard = ({ id, image, title, type, skeleton = false }) => {
+const VideoCard = ({ id, image, miniature, title, type, skeleton = false }) => {
     return (
         <div className={"video-card"}>
             {skeleton ?
@@ -13,7 +14,7 @@ const VideoCard = ({ id, image, title, type, skeleton = false }) => {
 
                 <div>
                     <Link to={type === 0 ? `/movie/${id}` : `/serie/${id}`} >
-                        <img src={image} alt={title}/>
+                        <AppImage preview={miniature} final={image} alt={title}/>
                     </Link>
 
                 </div>

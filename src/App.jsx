@@ -3,7 +3,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import Root from "./components/Root.jsx";
 import Home, {loadDatas} from "./pages/Home.jsx";
 import VideoLayout from "./pages/VideoLayout.jsx";
-import VideoModal from "./components/VideoModal.jsx";
+import VideoModal, {loadDataById} from "./components/VideoModal.jsx";
 
 
 const App = () => {
@@ -28,7 +28,7 @@ const App = () => {
                             {
                                 path: ":id",
                                 element: <VideoModal/>,
-                                loader: loadDatas
+                                loader: loadDataById
                             }
                         ]
                     },
@@ -40,7 +40,7 @@ const App = () => {
                             {
                                 path: ":id",
                                 element: <VideoModal/>,
-                                loader: loadDatas
+                                loader: loadDataById
                             }
                         ]
                     }

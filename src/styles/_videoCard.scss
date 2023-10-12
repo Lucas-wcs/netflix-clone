@@ -12,11 +12,13 @@
         overflow: hidden;
         transition: 0.3s;
 
-        img {
-            width: 100%;
-            border-radius: 10px;
-            height: 100%;
-            object-fit: cover;
+        a {
+            img {
+                width: 100%;
+                border-radius: 10px;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 

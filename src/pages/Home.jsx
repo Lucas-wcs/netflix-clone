@@ -1,7 +1,7 @@
 import React, {Suspense, useState} from 'react';
 import {Await, defer, useLoaderData} from "react-router-dom";
 import VideoCard from "../components/VideoCard.jsx";
-import loadVideos from "../actions/actions.js";
+import {loadVideos} from "../actions/actions.js";
 
 const Home = () => {
 
@@ -41,7 +41,7 @@ const Home = () => {
                                                 return false
                                             }
                                         }).map( (film) => {
-                                            return <VideoCard key={film.id} id={film.id} type={film.type} image={film.image} title={film.title}/>
+                                            return <VideoCard key={film.id} miniature={film.miniature} id={film.id} type={film.type} image={film.image} title={film.title}/>
                                         })}
                                     </>
 

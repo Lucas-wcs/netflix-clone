@@ -1,7 +1,7 @@
 import React, {Suspense} from 'react';
 import {Await, defer, Outlet, useLoaderData, useLocation, useParams} from "react-router-dom";
 import VideoCard from "../components/VideoCard.jsx";
-import loadVideos from "../actions/actions.js";
+import {loadVideos} from "../actions/actions.js";
 
 const VideoLayout = () => {
 
@@ -10,7 +10,6 @@ const VideoLayout = () => {
     const location = useLocation()
 
     const params = useParams()
-    console.log(params)
 
 
     return (

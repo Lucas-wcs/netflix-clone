@@ -1,9 +1,15 @@
-async function loadVideos() {
-    const results = await fetch("http://demo1664740.mockable.io/video")
+export const loadVideos = async () => {
+    const results = await fetch(import.meta.env.VITE_BACKEND_URL+"/video")
 
     const videos = await results.json()
 
     return videos
 }
 
-export default loadVideos
+export const loadVideoById = async (id) => {
+    const results = await fetch(import.meta.env.VITE_BACKEND_URL+"/video/"+id)
+
+    const video = await results.json()
+
+    return video
+}
