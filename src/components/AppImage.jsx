@@ -19,14 +19,20 @@ const AppImage = ({preview, final, alt, imageClass = ""}) => {
     }, [final])
 
     return (
-        <img src={currentUrl} alt={alt} style={{
+        <div style={{
             filter: loading ? "blur(10px)" : "",
             transition: "0.6s filter linear",
             width: "100%",
-            background: "transparent",
+            background: `url("${currentUrl}")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            borderRadius: "10px",
+            animationDuration: `${Math.random()*(30 - 15) + 15}s`
         }}
         className={imageClass}
-        />
+        >
+            <div className={"background-linear"}></div>
+        </div>
     );
 };
 

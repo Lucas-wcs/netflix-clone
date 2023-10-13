@@ -14,7 +14,7 @@ const VideoCard = ({ id, image, miniature, title, type, skeleton = false }) => {
 
                 <div>
                     <Link to={type === 0 ? `/movie/${id}` : `/serie/${id}`} >
-                        <AppImage preview={miniature} final={image} alt={title}/>
+                        <AppImage preview={miniature} final={image} alt={title} imageClass={"movie-bg"}/>
                     </Link>
 
                 </div>
